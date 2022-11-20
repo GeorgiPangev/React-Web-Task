@@ -3,7 +3,7 @@ import {ACTIONS} from "./actions";
 const initialState = {
     fav: []
 }
-export default function favoritReducer(state = initialState, action) {
+export default function favoriteReducer(state = initialState, action) {
     const newState = Object.assign({}, state)
     const reducers = {
         [ACTIONS.ADD_FAVORITE]: () => {
