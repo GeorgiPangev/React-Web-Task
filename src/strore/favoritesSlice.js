@@ -14,8 +14,8 @@ export default function favoriteReducer(state = initialState, action) {
         },
         [ACTIONS.REM_FAVORITE]:
             () => {
+                const index = state.fav.indexOf(action.payload)
                 if (index > -1) {
-                    const index = state.fav.indexOf(action.payload)
                     newState.fav = newState.fav.slice()
                     newState.fav.splice(index, 1)
                 }
