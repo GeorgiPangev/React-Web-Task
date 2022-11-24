@@ -1,18 +1,15 @@
 import './App.css';
-import {Provider} from "react-redux";
-import {persistor, store} from "./strore";
 import HomePage from "./components/HomePage/HomePage";
-import {PersistGate} from "redux-persist/integration/react";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
     return (
-        <Provider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-                <div className="App">
-                    <HomePage/>
-                </div>
-            </PersistGate>
-        </Provider>
+        <div className="App">
+            <Routes>
+                <Route path="" element={<HomePage/>}/>
+                <Route path="/favorites"></Route>
+            </Routes>
+        </div>
     );
 }
 
