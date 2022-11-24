@@ -1,0 +1,12 @@
+header{
+    position: sticky;
+}
+.header-wrapper{
+    background-color: #61dafb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 7vh;
+    font-size: 20px;
+    font-weight: bold;
+}
