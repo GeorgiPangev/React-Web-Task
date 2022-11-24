@@ -1,4 +1,4 @@
-const ALBUMS = [
+ const ALBUMS = [
     {
         label: 'First',
         value: 1
@@ -19,3 +19,4 @@ const ALBUMS = [
         label: 'Fifth',
         value: 5
     }];
+ export default ALBUMS;
