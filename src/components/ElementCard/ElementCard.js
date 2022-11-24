@@ -8,7 +8,6 @@ const ElementCard = ({card, onLikeClick}) => {
         const length = favEl.filter(e => e.id === element.id)
         return length >= 0;
     }
-    console.log(showBtn())
     return (
         <section id={element.id}>
             <img src={element.url} alt="card img"/>
@@ -18,8 +17,7 @@ const ElementCard = ({card, onLikeClick}) => {
             {showBtn() && <button
                 className="like-btn"
                 id={element.id}
-                data-index={index}
-                onClick={onLikeClick}>Like
+                onClick={onLikeClick(element)}>Like
             </button>}
 
         </section>
