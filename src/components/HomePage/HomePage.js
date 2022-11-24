@@ -1,3 +1,4 @@
+import "./Home.css"
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {getAlbumByID} from "../../Service/albumsService";
 import ALBUMS from "./albumsList";
@@ -11,7 +12,11 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const options = useMemo(() => ALBUMS.map(a => <option key={a.value} value={a.value}>{a.label}</option>), []);
     const onSelectChange = useCallback((e) => setAlbumId(Number(e.target.value)), []);
-    function onLikeClick(element) {dispatch(addFav(element))}
+
+    function onLikeClick(element) {
+        dispatch(addFav(element))
+    }
+
     const cards = useMemo(() => album.map((element) =>
         <ElementCard
             className="element-card"

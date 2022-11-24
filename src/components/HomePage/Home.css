@@ -1,0 +1,35 @@
+.selector-box {
+    font-size: 25px;
+    background-color: whitesmoke;
+    height: 5vh;
+}
+
+.selector {
+    font-size: 20px;
+    width: 15vw;
+}
+
+.elements {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.element-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.element-wrapper img {
+    width: 45%;
+}
+
+.element-wrapper * {
+
+    padding: 5px;
+}
+
+.element-card {
+    border: 2px solid #282c34;
+}
