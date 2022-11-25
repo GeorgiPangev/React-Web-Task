@@ -5,11 +5,12 @@ const initialState = {
 }
 export default function favoriteReducer(state = initialState, action) {
     const newState = Object.assign({}, state)
+    console.log("In FavoriteReducer" + action.payload)
     const reducers = {
         [ACTIONS.ADD_FAVORITE]: () => {
-            if (state.fav.filter(e => e === action.payload) < 0) {
+            console.log(state.fav.filter(e => e.id === action.payload.id))
+            if (state.fav.filter(e => e.id === action.payload.id).length === 0) {
                 newState.fav = [...state.fav, action.payload]
-                console.log(newState)
             }
         },
         [ACTIONS.REM_FAVORITE]:

@@ -12,17 +12,12 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const options = useMemo(() => ALBUMS.map(a => <option key={a.value} value={a.value}>{a.label}</option>), []);
     const onSelectChange = useCallback((e) => setAlbumId(Number(e.target.value)), []);
-
-    function onLikeClick(element) {
-        dispatch(addFav(element))
-    }
-
     const cards = useMemo(() => album.map((element) =>
         <ElementCard
             className="element-card"
             key={element.id}
             card={{element}}
-            onLikeClick={onLikeClick}
+            onLikeClick={() => dispatch(addFav(element))}
         />), [album, dispatch])
     useEffect(() => {
         getAlbumByID(albumId).then((albumFromDB) => setAlbum(Array.from(albumFromDB)))
